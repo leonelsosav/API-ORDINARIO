@@ -1,15 +1,17 @@
+const Persona = require("./persona");
 
-class Cliente {
-    constructor(clientData) {
-        this.id = clientData.id;
-        this.nombre = clientData.nombre;
-        this.celular = clientData.celular;
-        this.email = clientData.email;
-        this.fechaNacimiento = clientData.fechaNacimiento;
-        this.frecuencia = clientData.frecuencia;
-        this.horario = clientData.horario;
-        this.tiempo = clientData.tiempo;
-        this.barbero = clientData.barbero;
+class Cliente extends Persona {
+    constructor(id, nombre, celular, email, fechaNacimiento, frecuencia, horario, tiempo, barbero) {
+        super(id, nombre, celular, email);
+        this.id;
+        this.nombre;
+        this.celular;
+        this.email;
+        this.fechaNacimiento = fechaNacimiento;
+        this.frecuencia = frecuencia;
+        this.horario = horario;
+        this.tiempo = tiempo;
+        this.barbero = barbero;
     }
 }
 

@@ -1,11 +1,14 @@
-class Usuario {
-    constructor(id, nombre, edad, direccion, celular, email, fechaIngreso) {
-        this.id = id;
-        this.nombre = nombre;
+const Persona = require("./persona");
+
+class Usuario extends Persona {
+    constructor(id, nombre, celular, email, edad, direccion, fechaIngreso) {
+        super(id, nombre, celular, email);
+        this.id;
+        this.nombre;
+        this.celular;
+        this.email;
         this.edad = edad;
         this.direccion = direccion;
-        this.celular = celular;
-        this.email = email;
         this.fechaIngreso = fechaIngreso;
     }
 }

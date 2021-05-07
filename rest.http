@@ -1,0 +1,104 @@
+
+POST http://localhost:8080/api/cliente HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": "1",
+    "nombre": "Javier Peraza",
+    "celular": 979898272,
+    "email": "javier@correo.com",
+    "fechaNacimiento":"01/01/2021",
+    "frecuencia":2,
+    "horario":"vespertino",
+    "tiempo":1.5,
+    "barbero":"3"
+}
+###
+GET http://localhost:8080/api/clientes
+###
+GET http://localhost:8080/api/cliente/1
+###
+PUT http://localhost:8080/api/cliente/1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": "1",
+    "nombre": "Javier Peraza",
+    "celular": 979898272,
+    "email": "javier@javier.com",
+    "fechaNacimiento":"01/01/2021",
+    "frecuencia":2,
+    "horario":"vespertino",
+    "tiempo":1.5,
+    "barbero":"3"
+}
+###
+DELETE http://localhost:8080/api/cliente/1 HTTP/1.1
+
+
+
+###
+POST http://localhost:8080/api/producto HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": "1",
+    "nombre": "peine",
+    "descripcion": "Peine para cabello",
+    "precio": 25,
+    "existencia":"01/01/2021",
+    "mostrador":2
+}
+###
+GET http://localhost:8080/api/productos
+###
+GET http://localhost:8080/api/producto/1
+###
+PUT http://localhost:8080/api/producto/1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": "1",
+    "nombre": "peine",
+    "descripcion": "Peine para cabello",
+    "precio": 20,
+    "existencia":"01/01/2021",
+    "mostrador":2
+}
+###
+DELETE http://localhost:8080/api/producto/1 HTTP/1.1
+
+
+
+###
+POST http://localhost:8080/api/usuario HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": "1",
+    "nombre": "Luis",
+    "edad": 20,
+    "direccion": "Calle 15-C",
+    "celular": "5563577687",
+    "email": "luis@correo.com",
+    "fechaIngreso": "01/01/2021"
+}
+###
+GET http://localhost:8080/api/usuarios
+###
+GET http://localhost:8080/api/usuario/1
+###
+PUT http://localhost:8080/api/usuario/1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": "1",
+    "nombre": "Luis",
+    "edad": 20,
+    "direccion": "Calle 15-C",
+    "celular": "5563577687",
+    "email": "luis@luis.com",
+    "fechaIngreso": "01/01/2021"
+}
+###
+DELETE http://localhost:8080/api/usuario/1 HTTP/1.1

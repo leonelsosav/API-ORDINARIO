@@ -21,7 +21,18 @@ const getAllClientes = async (req, res, next) => {
         console.log(typeof data);
         if (data.empty) res.status(404).send('No se encontró registro de clientes');
         else {
-            data.forEach(doc => clientesArray.push(new Cliente({... doc.data(), id:doc.id})));
+            data.forEach(doc => {
+                const cliente = new Cliente(
+                    doc.id,
+                    doc.data().nombre,
+                    doc.data().celular,
+                    doc.data().email,
+                    doc.data().fechaNacimiento,
+                    doc.data().monedero
+                );
+                clientesArray.push(cliente);
+                
+            });
             res.send(clientesArray)
         }
     } catch (error) {

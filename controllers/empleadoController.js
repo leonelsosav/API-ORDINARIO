@@ -21,17 +21,16 @@ const getAllEmpleados = async (req, res, next) => {
         if (data.empty) res.status(404).send('No se encontró registro de empleados');
         else {
             data.forEach(doc => {
-                const usuario = new Empleado(
+                const empleado = new Empleado(
                     doc.id,
                     doc.data().nombre,
-                    doc.data().direccion,
                     doc.data().celular,
                     doc.data().email,
-                    doc.data().edad,
+                    doc.data().fechaNacimiento,
                     doc.data().direccion,
                     doc.data().fechaIngreso
                 );
-                empleadosArray.push(usuario);
+                empleadosArray.push(empleado);
             });
             res.send(empleadosArray)
         }

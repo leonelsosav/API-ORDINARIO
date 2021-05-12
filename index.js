@@ -6,6 +6,7 @@ const config = require('./config');
 const empleadoRoutes = require('./routes/empleado-route');
 const clienteRoutes = require('./routes/cliente-route');
 const productoRoutes = require('./routes/producto-route');
+const ventaRoutes = require('./routes/venta-route');
 const app = express();
 
 app.use(express.json());
@@ -15,5 +16,6 @@ app.use(bodyParser.json());
 app.use('/api', empleadoRoutes.routes);
 app.use('/api', clienteRoutes.routes);
 app.use('/api', productoRoutes.routes);
+app.use('/api', ventaRoutes.routes);
 
 app.listen(config.port, () => console.log('App is listening on url http://localhost:' + config.port))

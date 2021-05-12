@@ -9,4 +9,4 @@ class Producto {
     }
 }
 
-module.exports = Producto
+module.exports = Producto;

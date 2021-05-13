@@ -4,7 +4,7 @@ const { addEmpleado, getAllEmpleados, getEmpleado, updateEmpleado, deleteEmplead
 const router = express.Router();
 
 router.post('/empleado', addEmpleado);
-router.get('/empleados', getAllEmpleados);
+router.get('/empleado', getAllEmpleados);
 router.get('/empleado/:id', getEmpleado);
 router.put('/empleado/:id', updateEmpleado);
 router.delete('/empleado/:id', deleteEmpleado);

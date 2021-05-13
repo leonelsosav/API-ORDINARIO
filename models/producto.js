@@ -1,11 +1,11 @@
 class Producto {
     constructor(id, nombre, descripcion, precio, existencia, mostrador) {
-        this.id = id;
-        this.nombre = nombre;
-        this.descripcion = descripcion;
-        this.precio = precio;
-        this.existencia = existencia;
-        this.mostrador = mostrador;
+        this.Id = id;
+        this.Nombre = nombre;
+        this.Descripcion = descripcion;
+        this.Precio = precio;
+        this.Existencia = existencia;
+        this.Mostrador = mostrador;
     }
 }
 

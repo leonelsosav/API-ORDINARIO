@@ -7,10 +7,10 @@ const firestore = firebase.firestore();
 const addEmpleado = async (req, res, next) => {
     try {
         const data = req.body;
-        await firestore.collection('empleados').doc(data.id).set(data);
+        await firestore.collection('empleados').doc(data.Id).set(data);
         res.send('Record saved successfuly')
     } catch (error) {
-        res.status(400).send(error, message)
+        res.status(400).send(error.message)
     }
 }
 
@@ -23,12 +23,12 @@ const getAllEmpleados = async (req, res, next) => {
             data.forEach(doc => {
                 const empleado = new Empleado(
                     doc.id,
-                    doc.data().nombre,
-                    doc.data().celular,
-                    doc.data().email,
-                    doc.data().fechaNacimiento,
-                    doc.data().direccion,
-                    doc.data().fechaIngreso
+                    doc.data().Nombre,
+                    doc.data().Celular,
+                    doc.data().Email,
+                    doc.data().FechaNacimiento,
+                    doc.data().Direccion,
+                    doc.data().FechaIngreso
                 );
                 empleadosArray.push(empleado);
             });
@@ -58,7 +58,7 @@ const updateEmpleado = async (req, res, next) => {
         await empleado.update(data);
         res.send('Empleado actualizado correctamente');
     } catch (error) {
-        res.status(400).send(error.message)
+        res.status(400).send(error.message);
     }
 }
 
@@ -67,6 +67,7 @@ const deleteEmpleado = async (req, res, next) => {
         const id = req.params.id;
         await firestore.collection('empleados').doc(id).delete();
         res.send('Empleado eliminado correctamente');
+
     } catch (error) {
         res.status(400).send(error.message)
     }

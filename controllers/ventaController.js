@@ -23,11 +23,11 @@ const getAllVentas = async (req, res, next) => {
             data.forEach(doc => {
                 const venta = new Venta(
                     doc.id,
-                    doc.data().idCliente,
-                    doc.data().idEmpleado,
-                    doc.data().productos,
-                    doc.data().fecha,
-                    doc.data().propina
+                    doc.data().IdCliente,
+                    doc.data().IdEmpleado,
+                    doc.data().Productos,
+                    doc.data().Fecha,
+                    doc.data().Propina
                 );
                 ventasArray.push(venta);
             });

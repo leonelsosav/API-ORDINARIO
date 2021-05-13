@@ -7,7 +7,7 @@ const firestore = firebase.firestore();
 const addCliente = async (req, res, next) => {
     try {
         const data = req.body;
-        await firestore.collection('clientes').doc(data.id).set(data);
+        await firestore.collection('clientes').doc(data.Id).set(data);
         res.send('Record saved successfuly')
     } catch (error) {
         res.status(400).send(error, message)
@@ -24,14 +24,13 @@ const getAllClientes = async (req, res, next) => {
             data.forEach(doc => {
                 const cliente = new Cliente(
                     doc.id,
-                    doc.data().nombre,
-                    doc.data().celular,
-                    doc.data().email,
-                    doc.data().fechaNacimiento,
-                    doc.data().monedero
+                    doc.data().Nombre,
+                    doc.data().Celular,
+                    doc.data().Email,
+                    doc.data().FechaNacimiento,
+                    doc.data().Monedero
                 );
                 clientesArray.push(cliente);
-                
             });
             res.send(clientesArray)
         }
@@ -44,7 +43,7 @@ const getCliente = async (req, res, next) => {
     try {
         const id = req.params.id;
         const data = await firestore.collection('clientes').doc(id).get();
-        if (!data.exists) res.status(404).send('No se encontró el cliente con el ID otorgado'); 
+        if (!data.exists) res.status(404).send('No se encontró el cliente con el ID otorgado');
         else res.send(data.data());
     } catch (error) {
         res.status(400).send(error.message)

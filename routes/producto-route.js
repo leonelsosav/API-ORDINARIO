@@ -4,7 +4,7 @@ const { addProducto, getAllProductos, getProducto, updateProducto, deleteProduct
 const router = express.Router();
 
 router.post('/producto', addProducto);
-router.get('/productos', getAllProductos);
+router.get('/producto', getAllProductos);
 router.get('/producto/:id', getProducto);
 router.put('/producto/:id', updateProducto);
 router.delete('/producto/:id', deleteProducto);

@@ -1,10 +1,10 @@
 class Venta {
     constructor(idCliente, idEmpleado, productos, fecha, propina) {
-        this.idCliente = idCliente;
-        this.idEmpleado = idEmpleado;
-        this.productos = productos;
-        this.fecha = fecha;
-        this.propina = propina;
+        this.IdCliente = idCliente;
+        this.IdEmpleado = idEmpleado;
+        this.Productos = productos;
+        this.Fecha = fecha;
+        this.Propina = propina;
     }
 }
 

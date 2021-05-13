@@ -1,10 +1,10 @@
 class Persona {
     constructor(id, nombre, celular, email, fechaNacimiento) {
-        this.id = id;
-        this.nombre = nombre;
-        this.celular = celular;
-        this.email = email;
-        this.fechaNacimiento = fechaNacimiento;
+        this.Id = id;
+        this.Nombre = nombre;
+        this.Celular = celular;
+        this.Email = email;
+        this.FechaNacimiento = fechaNacimiento;
     }
 }
 

@@ -4,7 +4,7 @@ const { addVenta, getAllVentas, getVenta } = require('../controllers/ventaContro
 const router = express.Router();
 
 router.post('/venta', addVenta);
-router.get('/ventas', getAllVentas);
+router.get('/venta', getAllVentas);
 router.get('/venta/:id', getVenta);
 
 module.exports = {

@@ -7,7 +7,7 @@ const firestore = firebase.firestore();
 const addProducto = async (req, res, next) => {
     try {
         const data = req.body;
-        await firestore.collection('productos').doc(data.id).set(data);
+        await firestore.collection('productos').doc(data.Id).set(data);
         res.send('Record saved successfuly')
     } catch (error) {
         res.status(400).send(error, message)
@@ -23,11 +23,11 @@ const getAllProductos = async (req, res, next) => {
             data.forEach(doc => {
                 const producto = new Producto(
                     doc.id,
-                    doc.data().nombre,
-                    doc.data().descripcion,
-                    doc.data().precio,
-                    doc.data().existencia,
-                    doc.data().mostrador
+                    doc.data().Nombre,
+                    doc.data().Descripcion,
+                    doc.data().Precio,
+                    doc.data().Existencia,
+                    doc.data().Mostrador
                 );
                 productosArray.push(producto);
             });

@@ -2,7 +2,7 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const config = require('./config');
+const port = process.env.PORT || 8080;
 const empleadoRoutes = require('./routes/empleado-route');
 const clienteRoutes = require('./routes/cliente-route');
 const productoRoutes = require('./routes/producto-route');
@@ -18,4 +18,4 @@ app.use('/api', clienteRoutes.routes);
 app.use('/api', productoRoutes.routes);
 app.use('/api', ventaRoutes.routes);
 
-app.listen(config.port, () => console.log('App is listening on url http://localhost:' + config.port))
+app.listen(port, () => console.log('App is listening on url http://localhost:' + port))

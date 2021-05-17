@@ -5,12 +5,15 @@ const Venta = require('../models/venta');
 const firestore = firebase.firestore();
 
 const addVenta = async (req, res, next) => {
+
     try {
         const data = req.body;
-        await firestore.collection('ventas').doc().set(data);
-        res.send('Record saved successfuly')
+        await firestore.collection('ventas').add(data).then(docRef => {
+            res.json({ idVenta: docRef.id });
+        });
     } catch (error) {
-        res.status(400).send(error, message)
+        console.log(error);
+        res.status(400).send(error.message)
     }
 }
 

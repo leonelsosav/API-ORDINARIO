@@ -29,8 +29,7 @@ const getAllVentas = async (req, res, next) => {
                     doc.data().IdCliente,
                     doc.data().IdEmpleado,
                     doc.data().Productos,
-                    doc.data().Fecha,
-                    doc.data().Propina
+                    doc.data().Fecha
                 );
                 ventasArray.push(venta);
             });
